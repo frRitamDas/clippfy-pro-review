@@ -1,0 +1,7 @@
+{
+  "name": "clippfy.pro-clone",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
