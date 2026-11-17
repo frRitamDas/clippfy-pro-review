@@ -1,6 +1,7 @@
 {
-  "name": "clippfy.pro-clone",
+  "name": "clippfy-reviews",
   "version": "1.0.0",
+  "description": "The reviews section from clippfy.pro, extracted standalone",
   "scripts": {
     "start": "npx serve ."
   }

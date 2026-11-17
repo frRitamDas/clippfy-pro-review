@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Clippfy — Reviews section (extracted, self-contained)
+   --------------------------------------------------------------------------
+   This is the *final computed* styling of the original `#reviews` block.
+   The Clippfy bundle spread these rules over several stylesheets, and the order
+   they were inlined in the page was NOT the filename order — the landing "v4"
+   overrides came first, then 2_landing.css, then the shared design system in
+   1_styles.css. Every rule below is the LAST declaration that actually won in
+   that real cascade, so this renders like the live site with zero dead overrides.
+   ========================================================================== */
+
+/* ---------- design tokens (dark graphite + neon lime) ---------- */
+:root {
+  color-scheme: dark;
+
+  --bg: #0c0c0d;
+  --s1: #141416;
+
+  --ink: #f1f2ec;
+  --ink-2: #d5d7cf;
+  --muted: #9c9e97;
+
+  --on-lime: #0c0c0d;
+  --lime: #d1fe17;
+  --hairline: rgba(255, 255, 255, .07);
+
+  --font: "Geist", "Segoe UI", system-ui, sans-serif;
+  --display: "Montserrat", "Geist", system-ui, sans-serif;
+}
+
+/* ---------- reset / base ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--bg); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--lime); color: var(--on-lime); }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 8px; }
+
+.container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+
+/* section rhythm from the landing page */
+section { padding: 88px 0; position: relative; }
+
+/* ==========================================================================
+   TESTIMONIAL / REVIEW MARQUEE
+   ========================================================================== */
+.voices {
+  overflow: hidden;
+  background: var(--bg);
+  padding-top: 12px;              /* tightened so the marquee sits close to the hero */
+}
+
+/* edge-fade mask so cards drift in and out of view */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  padding: 10px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* the track holds 2x the cards; JS clones them and sets the duration */
+.marquee .track {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+  width: max-content;
+  align-items: stretch;
+  animation: marquee 38s linear infinite;
+}
+
+/* hovering keeps the row moving (matches the original) */
+.marquee:hover .track { animation-play-state: running; }
+
+/* second row runs the other way, a touch slower */
+.marquee.reverse .track {
+  animation-direction: reverse;
+  animation-duration: 34s;
+}
+
+.voices .marquee + .marquee { margin-top: 6px; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- review card ---------- */
+.tcard {
+  width: 360px;
+  margin: 0;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: var(--s1);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 12px 28px -18px rgba(0, 0, 0, .8);
+}
+
+.tc-top { display: flex; justify-content: space-between; align-items: center; }
+
+.ystars { color: #f5b400; font-size: 24px; letter-spacing: 2px; }
+
+.qmark { width: 30px; height: 30px; color: rgba(255, 255, 255, .12); flex: none; }
+
+.tcard blockquote {
+  margin: 0;
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.tcard figcaption { display: flex; align-items: center; gap: 10px; }
+
+.tcard .pfp {
+  width: 44px;
+  height: 44px;
+  border-width: 2px;
+  flex: none;
+}
+
+.tcard figcaption div { flex: 1; min-width: 0; }
+
+.tcard figcaption b { display: block; font-size: 15.5px; font-weight: 600; }
+
+.tcard figcaption small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tcard figcaption small svg { width: 17px; height: 17px; color: var(--lime); }
+.tcard figcaption small svg path { stroke: var(--on-lime); }
+
+/* earned-amount badge, right aligned in the card footer */
+.tcard em {
+  font-style: normal;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 22px;
+  color: #4ade80;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- avatar ---------- */
+.pfp {
+  display: block;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid var(--s1);
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, .6);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   LIVE STATS (closing counters)
+   ========================================================================== */
+.stats-live {
+  display: flex;
+  justify-content: center;
+  gap: clamp(40px, 8vw, 120px);
+  margin: 36px auto 0;
+  text-align: center;
+}
+
+.stats-live div { display: flex; flex-direction: column; gap: 6px; }
+
+.stats-live b {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-live span { font-size: 14px; color: var(--muted); }
+
+/* ==========================================================================
+   RESPONSIVE + MOTION
+   ========================================================================== */
+@media (max-width: 860px) {
+  section { padding: 64px 0; }
+}
+
+@media (max-width: 620px) {
+  .stats-live { flex-direction: column; gap: 28px; }
+  /* card width is intentionally untouched here — the original marquee
+     keeps its 360px cards and simply scrolls them, so this is faithful. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee .track { animation: none; }
+}
