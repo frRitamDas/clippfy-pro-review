@@ -175,41 +175,10 @@ section { padding: 88px 0; position: relative; }
 }
 
 /* ==========================================================================
-   LIVE STATS (closing counters)
-   ========================================================================== */
-.stats-live {
-  display: flex;
-  justify-content: center;
-  gap: clamp(40px, 8vw, 120px);
-  margin: 36px auto 0;
-  text-align: center;
-}
-
-.stats-live div { display: flex; flex-direction: column; gap: 6px; }
-
-.stats-live b {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(26px, 3vw, 36px);
-  letter-spacing: -.03em;
-  line-height: 1;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
-
-.stats-live span { font-size: 14px; color: var(--muted); }
-
-/* ==========================================================================
    RESPONSIVE + MOTION
    ========================================================================== */
 @media (max-width: 860px) {
   section { padding: 64px 0; }
-}
-
-@media (max-width: 620px) {
-  .stats-live { flex-direction: column; gap: 28px; }
-  /* card width is intentionally untouched here — the original marquee
-     keeps its 360px cards and simply scrolls them, so this is faithful. */
 }
 
 @media (prefers-reduced-motion: reduce) {

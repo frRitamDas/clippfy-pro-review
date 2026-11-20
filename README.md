@@ -28,8 +28,6 @@ Then open the printed URL. It also works by opening `index.html` directly in a b
   below), edge-faded so cards drift in and out instead of hard-cutting.
 - **Each card**: 5 gold stars, quote mark, review text, avatar, handle, "Verified clipper"
   badge, and the amount that clipper earned.
-- **Live stats** underneath: creators on Clippfy and clips generated, both ticking upward
-  from a fixed date so they never reset on reload.
 
 ## Notes on the extraction
 
@@ -49,13 +47,12 @@ Two things worth knowing:
 2. **The review copy is placeholder marketing copy.** The original source flagged this
    itself: *"TESTIMONIALS (placeholder copy: replace with real reviews before launch)"*.
    The names, quotes and dollar amounts are invented. Swap them for real ones before you
-   ship, along with the two counter baselines in `reviews.js`.
+   ship.
 
 ## Standalone vs original
 
 Small deliberate changes, since it no longer sits inside the full page:
 
 - The hero's `#reviews` anchor target is gone — this page *is* the reviews.
-- Counters keep their original baselines but live in `reviews.js` on their own.
 - Image-guard and profit-calculator/FAQ handlers from the original script were dropped,
   as they served sections that no longer exist.
