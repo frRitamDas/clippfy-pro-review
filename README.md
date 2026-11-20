@@ -10,7 +10,7 @@ app/dashboard, create flow, legal pages, editor engine) has been deleted.
 index.html            the standalone reviews page
 assets/reviews.css    all review styling, one file
 assets/reviews.js     seamless marquee + live counters
-img/pfp/p1..p11.jpg   local avatars
+img/pfp/p1..p11.jpg   locally bundled photo avatars
 ```
 
 ## Run it
@@ -28,8 +28,6 @@ Then open the printed URL. It also works by opening `index.html` directly in a b
   below), edge-faded so cards drift in and out instead of hard-cutting.
 - **Each card**: 5 gold stars, quote mark, review text, avatar, handle, "Verified clipper"
   badge, and the amount that clipper earned.
-- **Live stats** underneath: creators on Clippfy and clips generated, both ticking upward
-  from a fixed date so they never reset on reload.
 
 ## Notes on the extraction
 
@@ -40,21 +38,21 @@ dead overrides along. It is ~6 KB instead of towing ~110 KB of unrelated CSS.
 
 Two things worth knowing:
 
-1. **The avatars are placeholders.** The original pointed at `/img/pfp/p1..p11.jpg`, and
-   those files were never part of this bundle (they 404 on the source). They've been
-   regenerated locally as matching-size initials so nothing shows a broken image — drop
-   your real profile pictures over them using the same filenames.
+1. **The avatars are stock portraits.** The original pointed at `/img/pfp/p1..p11.jpg`,
+   but those files were not part of this bundle. The initials have been replaced with
+   locally bundled, square-cropped stock portraits selected for a U.S. urban creator feel.
+   They are not verified photos or proof of nationality for the named clippers; replace
+   them with customer-approved photos before presenting the testimonials as real.
 
 2. **The review copy is placeholder marketing copy.** The original source flagged this
    itself: *"TESTIMONIALS (placeholder copy: replace with real reviews before launch)"*.
    The names, quotes and dollar amounts are invented. Swap them for real ones before you
-   ship, along with the two counter baselines in `reviews.js`.
+   ship.
 
 ## Standalone vs original
 
 Small deliberate changes, since it no longer sits inside the full page:
 
 - The hero's `#reviews` anchor target is gone — this page *is* the reviews.
-- Counters keep their original baselines but live in `reviews.js` on their own.
 - Image-guard and profit-calculator/FAQ handlers from the original script were dropped,
   as they served sections that no longer exist.
