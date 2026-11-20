@@ -9,20 +9,20 @@
    that real cascade, so this renders like the live site with zero dead overrides.
    ========================================================================== */
 
-/* ---------- design tokens (dark graphite + neon lime) ---------- */
+/* ---------- design tokens (light neutrals + neon lime) ---------- */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --bg: #0c0c0d;
-  --s1: #141416;
+  --bg: #ffffff;
+  --s1: #ffffff;
 
-  --ink: #f1f2ec;
-  --ink-2: #d5d7cf;
-  --muted: #9c9e97;
+  --ink: #18181b;
+  --ink-2: #41434a;
+  --muted: #7b7f87;
 
   --on-lime: #0c0c0d;
   --lime: #d1fe17;
-  --hairline: rgba(255, 255, 255, .07);
+  --hairline: rgba(15, 23, 42, .08);
 
   --font: "Geist", "Segoe UI", system-ui, sans-serif;
   --display: "Montserrat", "Geist", system-ui, sans-serif;
@@ -108,14 +108,14 @@ section { padding: 88px 0; position: relative; }
   border-radius: 22px;
   background: var(--s1);
   border: 1px solid var(--hairline);
-  box-shadow: 0 12px 28px -18px rgba(0, 0, 0, .8);
+  box-shadow: 0 12px 28px -18px rgba(15, 23, 42, .18);
 }
 
 .tc-top { display: flex; justify-content: space-between; align-items: center; }
 
 .ystars { color: #f5b400; font-size: 24px; letter-spacing: 2px; }
 
-.qmark { width: 30px; height: 30px; color: rgba(255, 255, 255, .12); flex: none; }
+.qmark { width: 30px; height: 30px; color: rgba(15, 23, 42, .1); flex: none; }
 
 .tcard blockquote {
   margin: 0;
@@ -167,7 +167,7 @@ section { padding: 88px 0; position: relative; }
   background-size: cover;
   background-position: center;
   border: 3px solid var(--s1);
-  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, .6);
+  box-shadow: 0 4px 12px -4px rgba(15, 23, 42, .16);
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
