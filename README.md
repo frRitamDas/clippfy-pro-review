@@ -10,7 +10,7 @@ app/dashboard, create flow, legal pages, editor engine) has been deleted.
 index.html            the standalone reviews page
 assets/reviews.css    all review styling, one file
 assets/reviews.js     seamless marquee + live counters
-img/pfp/p1..p11.jpg   local avatars
+img/pfp/p1..p11.jpg   locally bundled photo avatars
 ```
 
 ## Run it
@@ -40,10 +40,11 @@ dead overrides along. It is ~6 KB instead of towing ~110 KB of unrelated CSS.
 
 Two things worth knowing:
 
-1. **The avatars are placeholders.** The original pointed at `/img/pfp/p1..p11.jpg`, and
-   those files were never part of this bundle (they 404 on the source). They've been
-   regenerated locally as matching-size initials so nothing shows a broken image — drop
-   your real profile pictures over them using the same filenames.
+1. **The avatars are stock portraits.** The original pointed at `/img/pfp/p1..p11.jpg`,
+   but those files were not part of this bundle. The initials have been replaced with
+   locally bundled, square-cropped photo portraits. They are illustrative stock images,
+   not verified photos of the named clippers; replace them with customer-approved photos
+   before presenting the testimonials as real.
 
 2. **The review copy is placeholder marketing copy.** The original source flagged this
    itself: *"TESTIMONIALS (placeholder copy: replace with real reviews before launch)"*.
