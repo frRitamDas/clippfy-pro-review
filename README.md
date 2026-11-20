@@ -42,9 +42,9 @@ Two things worth knowing:
 
 1. **The avatars are stock portraits.** The original pointed at `/img/pfp/p1..p11.jpg`,
    but those files were not part of this bundle. The initials have been replaced with
-   locally bundled, square-cropped photo portraits. They are illustrative stock images,
-   not verified photos of the named clippers; replace them with customer-approved photos
-   before presenting the testimonials as real.
+   locally bundled, square-cropped stock portraits selected for a U.S. urban creator feel.
+   They are not verified photos or proof of nationality for the named clippers; replace
+   them with customer-approved photos before presenting the testimonials as real.
 
 2. **The review copy is placeholder marketing copy.** The original source flagged this
    itself: *"TESTIMONIALS (placeholder copy: replace with real reviews before launch)"*.
